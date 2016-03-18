@@ -1,0 +1,46 @@
+---
+layout: default
+---
+{% capture project_path %}{{ site.baseurl }}{{ site.projectimagepath }}{% endcapture %}
+
+{% for project in site.projects %}
+
+<h3>{{ project.title }}</h3>
+<span>{{ project.client }}</span>
+<p>{{ project.summary }}</p>
+
+<ul>
+    {% for tag in project.tags %}
+    <li>
+        {{ tag.tag }}
+    </li>
+    {% endfor %}
+</ul>
+
+<h5 class="heading heading--subtitle">tools</h5>
+<ul>
+    {% for tool in project.tools %}
+    <li>
+        {{ tool.tool }}
+    </li>
+    {% endfor %}
+</ul>
+
+<h5 class="heading heading--subtitle">roles</h5>
+<ul>
+    {% for role in project.roles %}
+    <li>
+        {{ role.role }}
+    </li>
+    {% endfor %}
+</ul>
+
+<ul>
+    {% for image in project.images %}
+    <li>
+        <img src="{{ project_path }}{{ image.image }}" alt="{{ project.title }}">
+    </li>
+    {% endfor %}
+</ul>
+
+{% endfor %}

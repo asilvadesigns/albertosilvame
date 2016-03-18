@@ -1,0 +1,13 @@
+//
+//  Units
+$site-nav__x:      $global__x;
+$site-nav__y:      ($global__y * 4);
+$site-nav__bg:     $primary__color;
+$site-nav__color:  $white;
+//
+//  Base
+.site-nav {
+    @include small-caps;
+
+    font-family: 'Mark', sans-serif;
+}

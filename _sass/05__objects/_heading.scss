@@ -1,0 +1,5 @@
+.heading--subtitle {
+    @include small-caps;
+
+    font-size: $h5__font-size;
+}
