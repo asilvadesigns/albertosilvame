@@ -1,0 +1,15 @@
+//
+//  Var
+$page-nav__x:  $global__x;
+$page-nav__y:  $global__y;
+//
+//  Base
+.page-nav {
+    margin-bottom: rhythm(1);
+    padding-top: $page-nav__y;
+    padding-bottom: $page-nav__y;
+
+    border-width: 1px 0;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0.15);
+}

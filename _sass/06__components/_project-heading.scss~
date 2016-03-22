@@ -1,0 +1,25 @@
+.project-heading {
+    font-family: "Mark", sans-serif;
+    font-size: $h2__font-size;
+
+    text-transform: capitalize;
+
+    + .project-subheading {
+        margin-top: rhythm(1);
+    }
+}
+
+.project-subheading {
+    @include small-caps;
+
+    font-size: $h5__font-size;
+    font-weight: 500;
+
+    opacity: .5;
+}
+
+.project-client,
+.project-role,
+.project-tools {
+    text-transform: capitalize;
+}

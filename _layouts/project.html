@@ -3,44 +3,64 @@ layout: default
 ---
 {% capture project_path %}{{ site.baseurl }}{{ site.projectimagepath }}{% endcapture %}
 
-{% for project in site.projects %}
+<!--<nav class="nav page-nav">-->
+    <!--<a class="nav__item" href="/portfolio">-->
+        <!--<i class="icon icon-arrow-left"></i>-->
+        <!--Back to Gallery.-->
+    <!--</a>-->
+<!--</nav>-->
 
-<h3>{{ project.title }}</h3>
-<span>{{ project.client }}</span>
-<p>{{ project.summary }}</p>
+<header class="header page-header">
+    <h3 class="project-heading">{{ page.title }}</h3>
+    <h5 class="project-subheading">summary</h5>
+    <p>{{ page.summary }}</p>
+</header>
 
-<ul>
-    {% for tag in project.tags %}
+<h5 class="project-subheading">client</h5>
+<p class="project-client">{{ page.client }}</p>
+
+
+<h5 class="project-subheading">role</h5>
+<ul class="project-role list--inline">
+    {% for role in page.roles %}
     <li>
-        {{ tag.tag }}
+        {{ role.role | capitalize }}
     </li>
     {% endfor %}
 </ul>
 
-<h5 class="heading heading--subtitle">tools</h5>
-<ul>
-    {% for tool in project.tools %}
+<h5 class="project-subheading">tools</h5>
+<ul class="project-tools list--inline">
+    {% for tool in page.tools %}
     <li>
-        {{ tool.tool }}
+        {{ tool.tool | capitalize }}
     </li>
     {% endfor %}
 </ul>
 
-<h5 class="heading heading--subtitle">roles</h5>
-<ul>
-    {% for role in project.roles %}
+<h5 class="project-subheading">languages</h5>
+<ul class="project-languages list--inline">
+    {% for language in page.languages %}
     <li>
-        {{ role.role }}
+        {{ language.language }}
     </li>
     {% endfor %}
 </ul>
 
+
+
+<!--<ul>-->
+    <!--{% for tag in page.tags %}-->
+    <!--<li>-->
+        <!--{{ tag.tag }}-->
+    <!--</li>-->
+    <!--{% endfor %}-->
+<!--</ul>-->
+
 <ul>
-    {% for image in project.images %}
+    {% for image in page.images %}
     <li>
-        <img src="{{ project_path }}{{ image.image }}" alt="{{ project.title }}">
+        <img src="{{ project_path }}{{ image.image }}" alt="{{ page.title }}">
     </li>
     {% endfor %}
 </ul>
-
-{% endfor %}

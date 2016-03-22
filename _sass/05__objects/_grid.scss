@@ -13,13 +13,14 @@ $grid__gutter: $global__gutter;
     max-width: 32em;
     margin: 0 auto;
 }
-//
-//  .grid__row {
-//      @include row($grid__gutter);
-//  }
-//
-//  .grid__column {
-//      @include column($grid__gutter);
-//
-//      box-sizing: border-box;
-//  }
+
+.grid__row {
+    @include row($grid__gutter);
+}
+
+.grid__column {
+    @include column($grid__gutter);
+
+    box-sizing: border-box;
+    float: left;
+}

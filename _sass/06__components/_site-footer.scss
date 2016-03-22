@@ -5,6 +5,11 @@ $site-footer__y: $global__y;
 //
 //  Base
 .site-footer {
-    margin-top: rhythm(1);
-    margin-bottom: rhythm(2);
+    font-family: 'Mark', sans-serif;
+
+    margin-top: rhythm(4);
+    padding-top: rhythm(2);
+    padding-bottom: rhythm(4);
+
+    background-color: tint($neutral__color, 90%);
 }

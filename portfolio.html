@@ -5,41 +5,59 @@ navgroup:   "main"
 navorder:   4
 ---
 {% capture project_path %}{{ site.baseurl }}{{ site.projectimagepath }}{% endcapture %}
+{% assign projects = site.projects | sort: listing-priority %}
 
-{% for project in site.projects %}
+{% for project in projects %}
 
-<h3><a href="{{ project.url }}">{{ project.title }}</a></h3>
-<span>{{ project.client }}</span>
-<p>{{ project.summary }}</p>
+<a class="project-feature" href="{{ project.url }}">
+    <img class="project-feature__image" src="{{ project.feature | prepend: project_path }}" alt="{{ project.title }}">
+    <div class="project-feature__details">
+        <h3 class="project-heading">{{ project.title }}</h3>
+    </div>
+</a>
 
-<ul>
-    {% for tag in project.tags %}
-    <li>
-        {{ tag.tag }}
-    </li>
-    {% endfor %}
-</ul>
+<!--<header class="header page-header">-->
+    <!--<h3 class="project-heading">{{ project.title }}</h3>-->
+    <!--<span class="small-caps">summary</span><br>-->
+    <!--<p>{{ project.summary }}</p>-->
+<!--</header>-->
 
-<h5 class="heading heading--subtitle">tools</h5>
-<ul>
-    {% for tool in project.tools %}
-    <li>
-        {{ tool.tool }}
-    </li>
-    {% endfor %}
-</ul>
+<!--<div class="grid__row">-->
+    <!--<div class="grid__column one-half">-->
+        <!--<span class="small-caps">client</span><br>-->
+        <!--<span>{{ project.client }}</span>-->
+    <!--</div>-->
+    <!--<div class="grid__column one-half">-->
+        <!--<span class="small-caps">role</span><br>-->
+        <!--<ul class="list--inline">-->
+            <!--{% for role in project.roles %}-->
+            <!--<li>-->
+                <!--{{ role.role }}-->
+            <!--</li>-->
+            <!--{% endfor %}-->
+        <!--</ul>-->
+    <!--</div>-->
+<!--</div>-->
 
-<h5 class="heading heading--subtitle">roles</h5>
-<ul>
-    {% for role in project.roles %}
-    <li>
-        {{ role.role }}
-    </li>
-    {% endfor %}
-</ul>
+<!--<div class="grid__row">-->
+    <!--<div class="grid__column one-half">-->
+        <!--<span class="small-caps">tools</span><br>-->
+        <!--<ul class="list--inline">-->
+            <!--{% for tool in project.tools %}-->
+            <!--<li>-->
+                <!--{{ tool.tool }}-->
+            <!--</li>-->
+            <!--{% endfor %}-->
+        <!--</ul>-->
+    <!--</div>-->
+<!--</div>-->
 
-<div>
-    <img src="{{ project.feature | prepend: project_path }}" alt="{{ project.title }}">
-</div>
+<!--<ul>-->
+    <!--{% for tag in project.tags %}-->
+    <!--<li>-->
+        <!--{{ tag.tag }}-->
+    <!--</li>-->
+    <!--{% endfor %}-->
+<!--</ul>-->
 
 {% endfor %}

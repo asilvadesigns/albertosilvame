@@ -1,0 +1,15 @@
+.img-feature {
+    position: relative;
+
+    overflow: hidden;
+
+    height: 16em;
+    margin-bottom: rhythm(2);
+}
+
+.img-feature img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-top: -6em;
+}

@@ -36,6 +36,7 @@
 //  Base
 //  Unclassed HTML elements (type selectors).
 @import
+    "04__base/outlined-iconset",
     "04__base/syntax",
     "04__base/typography";
 
@@ -47,6 +48,7 @@
     "05__objects/grid",
     "05__objects/header",
     "05__objects/heading",
+    "05__objects/img",
     "05__objects/nav",
     "05__objects/section";
 
@@ -54,6 +56,8 @@
 //  Components
 //  Designed components, chunks of UI.
 @import
+    "06__components/page-nav",
+    "06__components/project",
     "06__components/site-footer",
     "06__components/site-logo",
     "06__components/site-nav";

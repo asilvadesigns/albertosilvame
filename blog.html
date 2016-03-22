@@ -4,5 +4,11 @@ title:      blog
 navgroup:   "main"
 navorder:   3
 ---
-This is another test
-
+{% for post in site.posts %}
+<div>
+    <h3 class="post-heading">
+        <a href="{{ post.url }}">{{ post.title }}</a>
+    </h3>
+    <p class="post-excerpt">{{ post.excerpt }}</p>
+</div>
+{% endfor %}
