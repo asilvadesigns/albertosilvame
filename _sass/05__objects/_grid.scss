@@ -1,26 +1,32 @@
 //
-//  Units
-$grid__x: $global__x;
-$grid__y: $global__y;
-$grid__gutter: $global__gutter;
+//  Var
+$grid__x:  $global__x;
+$grid__y:  $global__y;
 //
 //  Base
-.grid__wrapper {
-    @include clearfix;
-    @include column($grid__gutter);
-
-    box-sizing: border-box;
-    max-width: 32em;
+.container {
+    max-width: 60em;
     margin: 0 auto;
+    padding: 0 $grid__x;
 }
 
-.grid__row {
-    @include row($grid__gutter);
+.row {
+    @include clearfix;
 }
 
-.grid__column {
-    @include column($grid__gutter);
-
-    box-sizing: border-box;
+.col {
     float: left;
+}
+
+.col--1 {
+    width: percentage(1 / 6);
+}
+
+.col--2 {
+    width: percentage(2 / 6);
+}
+
+.col--4 {
+    width: percentage(3 / 6);
+    padding-right: percentage(1 / 6);
 }

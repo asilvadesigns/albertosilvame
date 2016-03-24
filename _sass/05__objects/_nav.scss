@@ -1,46 +1,74 @@
 //
-//  Units
+//  Var
+$nav__y: $global__y;
 $nav__x: $global__x;
-$nav__y: rhythm($global__y);
 //
 //  Base
 .nav {
     @include clearfix;
 }
 
-.nav--navbar {
-    .nav__item {
-        display: block;
-        float: left;
-    }
-}
-
 .nav__group {
-    @include row($nav__x);
+    @include clearfix;
 }
 
 .nav__item {
-    @include column($nav__x);
-
-    padding-top: $nav__y;
-    padding-bottom: $nav__y;
-}
-
-.nav__item--svg {
     position: relative;
 
-    display: inline-block;
+    display: block;
+}
 
-    padding-top: 0;
-    padding-bottom: 0;
+.nav__icon {
+    position: absolute;
+    top: negative($nav__y * 3);
+    left: $nav__x;
 
-    &:after {
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-
-        content: "";
+    .icon {
+        font-size: $h4__font-size;
     }
+}
+
+.nav--navbar {
+    .nav__group {
+        margin: 0 negative($nav__x);
+    }
+
+    .nav__item {
+        float: left;
+
+        padding: $nav__y $nav__x;
+    }
+
+    .nav__text {
+        color: $neutral__color;
+    }
+
+    .active .nav__text {
+        color: $primary__color;
+    }
+}
+
+//
+//  Base
+.me {
+    position: relative;
+
+    padding-bottom: rhythm(1);
+
+    color: $neutral__color;
+}
+
+.me__name {
+    text-transform: capitalize;
+}
+
+.me__title {
+    @include small-caps;
+
+    font-size: $h6__font-size;
+    line-height: 1;
+
+    position: absolute;
+
+    width: 15em;
 }
